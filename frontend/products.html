@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết sản phẩm - Shop Phụ Kiện</title>
+    <title>Sản phẩm - Shop Phụ Kiện</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -12,7 +12,7 @@
         <a class="brand" href="./index.html">Shop Phụ Kiện</a>
         <nav class="nav">
           <a href="./index.html" class="nav__link">Trang chủ</a>
-          <a href="./products.html" class="nav__link">Sản phẩm</a>
+          <a href="./products.html" class="nav__link nav__link--active">Sản phẩm</a>
           <a href="./cart.html" class="nav__link">Giỏ hàng <span id="cartCount" class="badge hidden"></span></a>
           <a href="./settings.html" class="nav__link">Cài đặt</a>
         </nav>
@@ -21,12 +21,18 @@
 
     <main class="container">
       <section class="hero">
-        <h1 id="title">Chi tiết sản phẩm</h1>
-        <p class="muted">Xem thông tin và thêm vào giỏ hàng.</p>
+        <h1>Sản phẩm</h1>
+        <p class="muted">Danh sách phụ kiện máy tính.</p>
       </section>
 
       <section class="card">
-        <div id="detail" class="detail hidden"></div>
+        <div class="card__head">
+          <h2>Danh sách sản phẩm</h2>
+          <div class="small">
+            API: <span id="apiBaseLabel"></span>
+          </div>
+        </div>
+        <div id="products" class="grid"></div>
         <div id="error" class="error hidden"></div>
       </section>
     </main>
@@ -36,7 +42,7 @@
     </footer>
 
     <script src="./js/common.js"></script>
-    <script src="./js/product.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
 

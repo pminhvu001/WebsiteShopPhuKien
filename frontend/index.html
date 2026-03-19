@@ -11,7 +11,8 @@
       <div class="container topbar__inner">
         <a class="brand" href="./index.html">Shop Phụ Kiện</a>
         <nav class="nav">
-          <a href="./index.html" class="nav__link nav__link--active">Sản phẩm</a>
+          <a href="./index.html" class="nav__link nav__link--active">Trang chủ</a>
+          <a href="./products.html" class="nav__link">Sản phẩm</a>
           <a href="./cart.html" class="nav__link">Giỏ hàng <span id="cartCount" class="badge hidden"></span></a>
           <a href="./settings.html" class="nav__link">Cài đặt</a>
         </nav>
@@ -19,20 +20,52 @@
     </header>
 
     <main class="container">
-      <section class="hero">
-        <h1>Phụ kiện máy tính</h1>
-        <p>Giao diện đơn giản cho sinh viên, có API PHP trả JSON.</p>
+      <section class="hero hero--home">
+        <div>
+          <h1>Website bán phụ kiện máy tính</h1>
+          <p class="muted">
+            Frontend HTML/CSS/JS (Vercel) + Backend PHP JSON API + MySQL.
+          </p>
+          <div class="row" style="margin-top: 12px">
+            <a class="btn btn--primary" href="./products.html">Xem sản phẩm</a>
+            <a class="btn" href="./cart.html">Giỏ hàng</a>
+            <a class="btn" href="./settings.html">Cài đặt API</a>
+          </div>
+          <div class="small muted" style="margin-top: 10px">
+            API hiện tại: <span id="apiBaseLabel"></span>
+          </div>
+        </div>
+        <div class="homeCard">
+          <div class="homeCard__title">Có gì trong demo?</div>
+          <ul class="homeList">
+            <li>Xem danh sách sản phẩm + chi tiết</li>
+            <li>Thêm giỏ hàng (localStorage)</li>
+            <li>Đổi API backend ở trang Cài đặt</li>
+          </ul>
+          <div class="small muted">
+            Nếu chưa hiện sản phẩm: vào <b>Cài đặt</b> để nhập URL backend online.
+          </div>
+        </div>
       </section>
 
       <section class="card">
-        <div class="card__head">
-          <h2>Danh sách sản phẩm</h2>
-          <div class="small">
-            API: <span id="apiBaseLabel"></span>
+        <h2 style="margin-top: 0">Bắt đầu nhanh</h2>
+        <div class="grid2">
+          <div class="mini">
+            <div class="mini__title">1) Cài đặt API</div>
+            <div class="muted">Nhập URL dạng <code>https://your-domain.com/api</code>.</div>
+            <div style="margin-top: 10px">
+              <a class="btn" href="./settings.html">Mở Cài đặt</a>
+            </div>
+          </div>
+          <div class="mini">
+            <div class="mini__title">2) Xem sản phẩm</div>
+            <div class="muted">Trang danh sách + nút “Xem” vào chi tiết.</div>
+            <div style="margin-top: 10px">
+              <a class="btn btn--primary" href="./products.html">Mở Sản phẩm</a>
+            </div>
           </div>
         </div>
-        <div id="products" class="grid"></div>
-        <div id="error" class="error hidden"></div>
       </section>
     </main>
 
@@ -41,7 +74,10 @@
     </footer>
 
     <script src="./js/common.js"></script>
-    <script src="./js/app.js"></script>
+    <script>
+      window.App.updateCartBadge();
+      document.getElementById("apiBaseLabel").textContent = window.App.API_BASE;
+    </script>
   </body>
 </html>
 

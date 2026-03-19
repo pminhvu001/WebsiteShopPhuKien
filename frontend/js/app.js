@@ -37,7 +37,8 @@ function renderProducts(items) {
 }
 
 async function main() {
-  document.getElementById("apiBaseLabel").textContent = API_BASE;
+  const lbl = document.getElementById("apiBaseLabel");
+  if (lbl) lbl.textContent = API_BASE;
   updateCartBadge();
   const items = await apiGet("/products");
   renderProducts(items);
