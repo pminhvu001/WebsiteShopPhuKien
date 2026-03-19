@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm - Shop Phụ Kiện</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="./index.html">Shop Phụ Kiện</a>
+        <nav class="nav">
+          <a href="./index.html" class="nav__link">Sản phẩm</a>
+          <a href="./cart.html" class="nav__link">Giỏ hàng <span id="cartCount" class="badge hidden"></span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1 id="title">Chi tiết sản phẩm</h1>
+        <p class="muted">Xem thông tin và thêm vào giỏ hàng.</p>
+      </section>
+
+      <section class="card">
+        <div id="detail" class="detail hidden"></div>
+        <div id="error" class="error hidden"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container small">Demo WebsiteShopPhuKien</div>
+    </footer>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/product.js"></script>
+  </body>
+</html>
+
