@@ -15,26 +15,92 @@
           <a href="./products.html" class="nav__link nav__link--active">Sản phẩm</a>
           <a href="./cart.html" class="nav__link">Giỏ hàng <span id="cartCount" class="badge hidden"></span></a>
           <a href="./settings.html" class="nav__link">Cài đặt</a>
+          <a href="./admin/index.html" class="nav__link">Admin</a>
         </nav>
       </div>
     </header>
 
-    <main class="container">
-      <section class="hero">
-        <h1>Sản phẩm</h1>
-        <p class="muted">Danh sách phụ kiện máy tính.</p>
-      </section>
+    <main class="container shop">
+      <aside class="shop__sidebar">
+        <div class="panel">
+          <div class="panel__title">Danh mục</div>
+          <a class="slink slink--active" href="#">Chuột</a>
+          <a class="slink" href="#">Bàn phím</a>
+          <a class="slink" href="#">Tai nghe</a>
+          <a class="slink" href="#">Webcam</a>
+          <a class="slink" href="#">USB</a>
+        </div>
 
-      <section class="card">
-        <div class="card__head">
-          <h2>Danh sách sản phẩm</h2>
-          <div class="small">
-            API: <span id="apiBaseLabel"></span>
+        <div class="panel">
+          <div class="panel__title">Khoảng giá</div>
+          <label class="check"><input type="radio" name="price" checked /> Tất cả</label>
+          <label class="check"><input type="radio" name="price" /> Dưới 500K</label>
+          <label class="check"><input type="radio" name="price" /> 500K - 1 Triệu</label>
+          <label class="check"><input type="radio" name="price" /> 1 - 2 Triệu</label>
+          <label class="check"><input type="radio" name="price" /> Trên 2 Triệu</label>
+        </div>
+
+        <div class="panel">
+          <div class="panel__title">DPI</div>
+          <label class="check"><input type="checkbox" /> 800 DPI</label>
+          <label class="check"><input type="checkbox" /> 1600 DPI</label>
+          <label class="check"><input type="checkbox" /> 2400 DPI</label>
+        </div>
+      </aside>
+
+      <section class="shop__main">
+        <div class="banner">
+          <div class="banner__txt">
+            <div class="banner__kicker">PHỤ KIỆN MÁY TÍNH</div>
+            <div class="banner__big">CHẤT LƯỢNG GIÁ ƯU ĐÃI</div>
+            <div class="banner__sub">LÊN ĐẾN <b>50%</b></div>
+            <a class="btn btn--primary" href="#grid">Mua ngay</a>
+          </div>
+          <div class="banner__art" aria-hidden="true"></div>
+        </div>
+
+        <div class="shopHead">
+          <h1 class="shopHead__title">Gõ</h1>
+          <div class="shopHead__right">
+            <div class="small muted">API: <span id="apiBaseLabel"></span></div>
+            <select id="sort" class="input input--sort">
+              <option value="new">Sắp xếp: Mới nhất</option>
+              <option value="price_asc">Giá: Thấp → Cao</option>
+              <option value="price_desc">Giá: Cao → Thấp</option>
+            </select>
           </div>
         </div>
-        <div id="products" class="grid"></div>
+
+        <div id="grid" class="shopGrid"></div>
         <div id="error" class="error hidden"></div>
       </section>
+
+      <aside class="shop__cart">
+        <div class="panel">
+          <div class="panel__title">Giỏ hàng</div>
+          <div id="cartMini" class="cartMini"></div>
+          <div class="cartMini__sum">
+            <div class="muted">Tổng cộng</div>
+            <div id="cartTotal" class="cartMini__sumValue">0 đ</div>
+          </div>
+          <div class="row" style="margin-top: 10px">
+            <a class="btn" href="./cart.html">Xem giỏ</a>
+            <a class="btn btn--primary" href="#checkout">Thanh toán</a>
+          </div>
+        </div>
+
+        <div id="checkout" class="panel">
+          <div class="panel__title">Thuê Thác</div>
+          <div class="form">
+            <input id="fullName" class="input" placeholder="Họ tên" />
+            <input id="phone" class="input" placeholder="SĐT" />
+            <input id="address" class="input" placeholder="Địa chỉ" />
+            <textarea id="note" class="input" rows="3" placeholder="Nội dung / ghi chú"></textarea>
+            <button id="btnCheckout" class="btn btn--primary" type="button">Tạo đơn (demo)</button>
+            <div class="small muted">Đặt hàng thật sẽ làm ở bước tiếp theo (login + gọi API orders).</div>
+          </div>
+        </div>
+      </aside>
     </main>
 
     <footer class="footer">
@@ -42,7 +108,7 @@
     </footer>
 
     <script src="./js/common.js"></script>
-    <script src="./js/app.js"></script>
+    <script src="./js/shop.js"></script>
   </body>
 </html>
 
