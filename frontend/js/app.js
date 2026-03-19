@@ -43,5 +43,7 @@ async function main() {
   renderProducts(items);
 }
 
-main().catch((e) => showError(e.message || String(e)));
+main().catch((e) => {
+  showError(`${e.message || String(e)} (vào "Cài đặt" để đổi API)`);
+});
 

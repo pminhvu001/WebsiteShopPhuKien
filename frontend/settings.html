@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết sản phẩm - Shop Phụ Kiện</title>
+    <title>Cài đặt API - Shop Phụ Kiện</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -13,19 +13,28 @@
         <nav class="nav">
           <a href="./index.html" class="nav__link">Sản phẩm</a>
           <a href="./cart.html" class="nav__link">Giỏ hàng <span id="cartCount" class="badge hidden"></span></a>
-          <a href="./settings.html" class="nav__link">Cài đặt</a>
+          <a href="./settings.html" class="nav__link nav__link--active">Cài đặt</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
       <section class="hero">
-        <h1 id="title">Chi tiết sản phẩm</h1>
-        <p class="muted">Xem thông tin và thêm vào giỏ hàng.</p>
+        <h1>Cài đặt API</h1>
+        <p class="muted">Nhập URL backend (PHP API) để web online tải sản phẩm.</p>
       </section>
 
       <section class="card">
-        <div id="detail" class="detail hidden"></div>
+        <div class="form">
+          <label class="label">API Base URL (ví dụ: https://your-domain.com/api)</label>
+          <input id="apiBase" class="input" placeholder="https://..." />
+          <div class="row">
+            <button id="save" class="btn btn--primary" type="button">Lưu</button>
+            <button id="reset" class="btn" type="button">Reset về localhost</button>
+            <a class="btn" href="./index.html">Về trang chủ</a>
+          </div>
+          <div class="small muted">Hiện tại: <span id="current"></span></div>
+        </div>
         <div id="error" class="error hidden"></div>
       </section>
     </main>
@@ -35,7 +44,7 @@
     </footer>
 
     <script src="./js/common.js"></script>
-    <script src="./js/product.js"></script>
+    <script src="./js/settings.js"></script>
   </body>
 </html>
 
